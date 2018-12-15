@@ -53,7 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Daan\script\CameraFollow.cs" />
      <Compile Include="Assets\Daan\script\movement.cs" />
      <None Include="Assets\midas\hoi.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
