@@ -23,8 +23,10 @@ public class movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //draw ground check
         isGrounded = Physics2D.OverlapCircle(GroundCheck.position, CheckRadius, WhatIsGround);
 
+        //movement
         moveInput = Input.GetAxis("Horizontal");
         if (isGrounded == true)
         {
@@ -35,7 +37,7 @@ public class movement : MonoBehaviour
             rb.velocity = new Vector2(moveInput * speed * Time.deltaTime * 0.75f, rb.velocity.y);
         }
 
-  
+        //flip character
         if(moveInput < 0)
         {
             sr.flipX = true;
@@ -48,6 +50,7 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+        //jump
         if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)) && isGrounded == true)
         {
             rb.velocity = Vector2.up * jumpforce;
